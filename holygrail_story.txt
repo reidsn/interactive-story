@@ -1,0 +1,457 @@
+##INTRO
+NONE
+Welcome to the Quest for the Holy Grail.
+
+A man in royal robes and a crown approaches you, flanked by several knights.
+(Royal Man) What is your name, peasant?
+input,NAME,yes,QUESTION1
+WITCH
+
+##WITCH
+NAME
+(Royal Man) Are you a witch, NAME?
+yesno
+WITCHEND:JOIN
+
+##JOIN
+NONE
+(Royal Man) Oh, good! You're a knight then!
+Greetings, brave knight! I am Arthur, King of the Britons. 
+I am gathering knights to join me on my quest for the Holy Grail.
+Will you join me?
+yesno
+HORSE:FARMEND
+
+##HORSE
+NAME
+(Arthur) Do you have a horse, Sir NAME?
+yesno
+YESHORSE:NOHORSE
+
+##YESHORSE
+NONE
+(Arthur) Oh. Well. You won't need it. Here's some coconuts.
+1
+random
+SHIELDS
+
+##NOHORSE
+NONE
+(Arthur) No matter. Here are some coconuts.
+1
+random
+SHIELDS
+
+##SHIELDS
+NONE
+I have several shields here. Which color do you want?
+input,COLOR,no,QUESTION3_1
+FRENCHINTRO
+
+##FRENCHINTRO
+NONE
+As you journey on with King Arthur and his knights, you spot a castle in the distance.
+Do you approach it?
+yesno
+FRENCHCASTLE:SPLITUP
+
+##FRENCHCASTLE
+NONE
+A lone guard stands atop the wall.
+(Arthur) Hello! I am King Arthur of Camelot, and these are the Knights of the Round Table. Whose castle is this?
+(Guard) This is the castle of my master, Guy de Loimbard.
+(Arthur) Go and ask your master if he will join us in our quest for the Holy Grail.
+(Guard) Well, I'll ask him, but I don't think he'll be very keen. Uh, he's already got one, you see.
+Question the guard further?
+yesno
+FRENCHGUARD:NICEFRENCHBYE
+
+##FRENCHGUARD
+NAME
+(NAME) Are you sure he's got one? Can we come up and take a look?
+(Guard) Of course not! You are English types!
+(Arthur) Well, what are you, then?
+(Guard) I'm French, you silly king!
+(Galahad) What are you doing in England?
+(French Guard) Mind your own business!
+(Arthur) What do you think, Sir NAME? Shall we attack and take their Grail?
+yesno
+FRENCHTAUNTING:MEANFRENCHBYE
+
+##FRENCHTAUNTING
+NONE
+(Arthur) If you will not show us the Grail, we shall take your castle by force!
+(French Guard) You don't frighten us, English pig-dogs! Go and boil your bottom, sons of a silly person.
+I blow my nose at you, so-called Arthur King, you and all your silly English k-nnnnniggets.
+(Galahad) What a strange person.
+(Arthur) Now look here, my good man-
+(French Guard) I don't wanna talk to you no more, you empty headed animal food trough wiper!
+I fart in your general direction! Your mother was a hamster and your father smelt of elderberries!
+(Arthur) This is your last chance. I've been more than reasonable.
+(French Guard) Fetchez la vache.
+Do you stay here?
+yesno
+COW:MEANFRENCHBYE
+
+##COW
+NONE
+(Arthur) Right! Charge!
+(Knights) Charge!
+Suddenly a cow is lanched over the wall and narrowly misses you.
+(French Guard) Take this! And this!
+Several more farm animals fly over the wall, scattering the knights.
+(Arthur and the Knights) Run away!
+Do you run away?
+yesno
+MEANFRENCHBYE:SQUASHEDEND
+
+##NICEFRENCHBYE
+NONE
+(Arthur) Well, that checks out. Goodbye, sir.
+(Guard) Goodbye!
+
+1
+random
+SPLITUP
+
+##MEANFRENCHBYE
+NAME
+(French Guard) Hahaha! Yes, run away, or I shall taunt you a second time!
+(Lancelot) Fiends! I'll tear them apart!
+(Arthur) No no no! But this cannot stand. Sir NAME, shall we fight back?
+yesno
+TROJANRABBIT:SPLITUP
+
+##TROJANRABBIT
+NONE
+(Bedevere) Sir! I have a plan.
+Under Bedevere's instructions, you all help to construct a large hollow wooden rabbit and push it up to the gate.
+Do you get in the rabbit?
+yesno
+FRENCHEND:TROJANFAIL
+
+##TROJANFAIL
+NAME
+You all hide as the French bring the wooden rabbit into the castle.
+(Arthur) Now what?
+(Bedevere) Now, Lancelot, Galahad, NAME and I wait until nightfall, and then leap out of the rabbit, taking the French by suprise!
+(Arthur) Who leaps out?
+(Bedevere) Uh, Lancelot, Galahad, NAME and I leap out, oh... Well if we built this large wooden badger...
+Suddenly, you hear the sound of the catapults again, and the wooden rabbit comes flying over the wall towards you.
+(Arthur and the Knights) Run away! Run away!
+Do you run away?
+yesno
+SPLITUP:SQUASHEDEND
+
+##SPLITUP
+NAME
+(Arthur) Well, at this point in our journey, I think we should split up and go out separately to find more knights and seek the Holy Grail.
+Sir NAME, who do you want to travel with?
+[Arthur, Galahad, Lancelot, Robin, Bedevere]
+choice
+ARTHUR:GALAHAD:LANCELOT:ROBIN:BEDEVERE
+
+##ARTHUR
+NONE
+You and Arthur travel for many miles through a thick forest before you begin to hear clanging noises from ahead.
+Do you approach?
+yesno
+BLACKKNIGHTINTRO:ARTHURBEDEVERE
+
+##BLACKKNIGHTINTRO
+NAME
+You come to a clearing in the trees cut through with a stream. Over the stream is a bridge on which two knights in full armor are fighting.
+As you watch, the knight in black armor stabs the knight in green armor through the head. The Green Knight falls.
+Arthur approaches the Black Knight, who now stands at attention on the middle of the bridge.
+(Arthur) You fight with the strength of many men, Sir Knight. I am Arthur, King of the Britons.
+The Black Knight does not respond.
+(Arthur) I seek the finest and the bravest knights in the land to join me in my court at Camelot. You have proved yourself worthy. Will you join me?
+The Black Knight stares back impassively.
+(Arthur) You make me sad. Shall we continue, Sir NAME?
+yesno
+BLACKKNIGHTFIGHT:ARTHURBEDEVERE
+
+##BLACKKNIGHTFIGHT
+NAME
+(Black Knight) None shall pass.
+(Arthur) What?
+(Black Knight) None shall pass.
+(Arthur) I have no quarrel with you , good Sir Knight, but I must cross this bridge.
+(Black Knight) Then you shall die.
+(Arthur) So be it. Sir NAME, do you wish to take this fight?
+yesno
+ARMORLEG:ARTHURFIGHT
+
+##ARMORLEG
+NONE
+You charge forward and the fight begins. You spot an opening in the Black Knight's defense.
+Do you aim for an arm or a leg?
+[arm, leg]
+choice
+ARM:LEG
+
+##ARM
+NAME
+You swing and chop off the Black Knight's left arm.
+(NAME) Now stand aside, worthy adversary.
+(Black Knight) 'Tis but a scratch.
+(NAME) A scratch? Your arm's off!
+(Black Knight) No, it isn't.
+(NAME) Well, what's that, then?
+(Black Knight) I've had worse. Come on, you pansy!
+
+The fight resumes. You swing and chop off the Black Knight's other arm.
+(NAME) Victory is mine!
+
+The Black Knight runs forward and kicks you.
+(Black Knight) Have at you!
+(NAME) You are brave, Sir Knight, but the fight is mine.
+(Black Knight) Oh, had enough, eh?
+(NAME) Look, you stupid bastard, you've got no arms left!
+(Black Knight) Just a flesh wound.
+He kicks you again.
+
+Do you continue fighting?
+yesno
+LEG2:BLACKKNIGHTOUTRO
+
+##LEG2
+NAME
+(NAME) Look, I'll have your leg.
+You cut off the Black Knight's right leg.
+
+(Black Knight) Right. I'll do you for that!
+(NAME) You'll what?
+(Black Knight) Come here!
+(NAME) What are you going to do, bleed on me?
+(Black Knight) I'm invincible!
+(NAME) You're a looney.
+(Black Knight) The Black Knight always triumphs! Have at you! Come on, then!
+
+You cut off the Black Knight's other leg.
+(Black Knight) Oh? All right, we'll call it a draw.
+(Arthur) Come on, Sir NAME. We'll be on our way.
+
+1
+random
+BLACKKNIGHTOUTRO
+
+##LEG
+NAME
+You swing and chop off the Black Knight's left leg.
+(NAME) Now stand aside, worthy adversary.
+(Black Knight) 'Tis but a scratch.
+(NAME) A scratch? Your leg's off!
+(Black Knight) No, it isn't.
+(NAME) Well, what's that, then?
+(Black Knight) I've had worse. Come on, you pansy!
+
+The fight resumes. You swing and chop off the Black Knight's other leg.
+(NAME) Victory is mine!
+
+The Black Knight flails his arms and whacks you.
+(Black Knight) Have at you!
+(NAME) You are brave, Sir Knight, but the fight is mine.
+(Black Knight) Oh, had enough, eh?
+(NAME) Look, you stupid bastard, you've got no legs left!
+(Black Knight) Just a flesh wound.
+He whacks you again.
+
+Do you continue fighting?
+yesno
+ARM2:BLACKKNIGHTOUTRO
+
+##ARM2
+NAME
+(NAME) Look, I'll have your arm.
+You cut off the Black Knight's right arm.
+
+(Black Knight) Right. I'll do you for that!
+(NAME) You'll what?
+(Black Knight) Come here!
+(NAME) What are you going to do, bleed on me?
+(Black Knight) I'm invincible!
+(NAME) You're a looney.
+(Black Knight) The Black Knight always triumphs! Have at you! Come on, then!
+
+You cut off the Black Knight's other arm.
+(Black Knight) Oh? All right, we'll call it a draw.
+(Arthur) Come on, Sir NAME. We'll be on our way.
+
+1
+random
+BLACKKNIGHTOUTRO
+
+##ARTHURFIGHT
+NAME
+King Arthur attacks and quickly chops off all of the Black Knight's limbs.
+(Black Knight) Right. I'll do you for that!
+(Arthur) You'll what?
+(Black Knight) Come here!
+(Arthur) What are you going to do, bleed on me?
+(Black Knight) I'm invincible!
+(Arthur) You're a looney. Come on, Sir NAME.
+1
+random
+BLACKKNIGHTOUTRO
+
+##BLACKKNIGHTOUTRO
+NONE
+(Black Knight) Oh. Oh, I see. Running away, eh? You yellow bastards! Come back here and take what's coming to you. I'll bite your legs off!
+
+You and Arthur ride around the Black Knight and continue your travels.
+1
+random
+ARTHURBEDEVERE
+
+
+
+##BRIDGEINTRO
+NONE
+The Gorge of Eternal Peril
+ft. the old man from scene 24
+
+(Arthur) Behold the Bridge of Death, guarded by a terrifying keeper! To cross you must answer five questions-
+(Galahad) Three questions, sir.
+(Arthur) Three questions to pass safely. If you do not answer the five questions-
+(Galahad) Three questions, sir.
+(Arthur) Three questions correctly, you will be thrown into the Gorge of Eternal Peril. Are you ready?
+yesno
+QUESTION1:ROBINEND
+
+##QUESTION1
+NAME
+(Bridgekeeper) Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side they see.
+(NAME) Ask me the questions, bridgekeeper. I'm not afraid.
+(Bridgekeeper) What is your name?
+NAME
+QUESTION2:BADEND
+
+##QUESTION2
+NONE
+(Bridgekeeper) What is your quest?
+holy grail
+QUESTION3:BADEND
+
+##QUESTION3
+NONE
+3,1,1,1
+random
+QUESTION3_1:QUESTION3_2:QUESTION3_3:QUESTION3_4
+
+##QUESTION3_1
+NONE
+(Bridgekeeper) What is your favorite color?
+COLOR
+GOODEND:BADEND
+
+##QUESTION3_2
+NONE
+(Bridgekeeper) What is the air speed velocity of an unladen swallow?
+african or european
+DEADEND:BADEND
+
+##QUESTION3_3
+NONE
+(Bridgekeeper) What is the capital of Assyria?
+assur,ashur
+GOODEND:BADEND
+
+##QUESTION3_4
+NONE
+(Bridgekeeper) How many questions do I ask?
+3,three
+GOODEND:BADEND
+
+##WITCHEND
+NONE
+BURN THE WITCH!!!!!
+You have been burned for being a witch.
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##FARMEND
+NAME
+(Arthur) Well that's a pity. Farewell, Sir NAME. Knights, to Camelot!
+
+You live out the rest of your life as a farmer.
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##SQUASHEDEND
+NONE
+You have been squashed to death.
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##FRENCHEND
+NONE
+You hide inside the wooden rabbit to wait for nightfall.
+As the French wheel the rabbit into the castle, you realize you are alone in there.
+Suddenly, you are flying as the French catapult the rabbit over the castle walls.
+
+You have been catapulted into your fellow knights.
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##ROBINEND
+NAME
+(NAME) Nope, never mind.
+                   Brave Sir NAME ran away
+                   Bravely ran away away
+                   When danger reared its ugly head
+                   They bravely turned their tail and fled
+                   Yes brave Sir NAME turned about
+                   And gallently they chickened out
+                   Bravely taking to their feet
+                   They neat a very brave retreat
+                   Bravest of the brave Sir NAME!
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##BADEND
+NONE
+AAAAUUUUUGH!!!!
+
+You have been thrown into the Gorge of Eternal Peril.
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##GOODEND
+NONE
+(Bridgekeeper) Right. Off you go.
+
+You have safely crossed the Bridge of Death!
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##DEADEND
+NONE
+(Bridgekeeper) Huh? I-I don\'t know that- AAAAUUUUUGH!!!!
+
+The Bridgekeeper has been thrown into the Gorge of Eternal Peril.
+
+You have safely crossed the Bridge of Death!
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##END
+No, I wouldn't want to either.
+And now for something completely different.
+A man with a tape recorder up his nose!
