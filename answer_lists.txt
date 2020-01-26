@@ -1,2 +1,2 @@
-yes,yeah,yea,yep,sure,yup,y,y,y,yessir,y,y
-no,nah,nope,n,n,n,n,n,n
+yes,yeah,yea,yep,sure,yup,yessir,y
+no,nah,nope,n
