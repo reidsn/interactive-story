@@ -306,6 +306,48 @@ ARTHURBEDEVERE
 
 
 
+
+##TEMPORARYBRIDGE
+NONE
+This part of the story will be available soon!
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##GALAHAD
+NONE
+1
+random
+TEMPORARYBRIDGE
+
+##LANCELOT
+NONE
+1
+random
+TEMPORARYBRIDGE
+
+##ROBIN
+NONE
+1
+random
+TEMPORARYBRIDGE
+
+##BEDEVERE
+NONE
+1
+random
+TEMPORARYBRIDGE
+
+##ARTHURBEDEVERE
+NONE
+1
+random
+TEMPORARYBRIDGE
+
+
+
+
 ##BRIDGEINTRO
 NONE
 The Gorge of Eternal Peril
@@ -455,46 +497,3 @@ INTRO:END
 No, I wouldn't want to either.
 And now for something completely different.
 A man with a tape recorder up his nose!
-
-
-
-
-
-
-##TEMPORARYBRIDGE
-NONE
-This part of the story will be available soon!
-
-Do you want to play again?
-yesno
-INTRO:END
-
-##GALAHAD
-NONE
-1
-random
-TEMPORARY BRIDGE
-
-##LANCELOT
-NONE
-1
-random
-TEMPORARY BRIDGE
-
-##ROBIN
-NONE
-1
-random
-TEMPORARY BRIDGE
-
-##BEDEVERE
-NONE
-1
-random
-TEMPORARY BRIDGE
-
-##ARTHURBEDEVERE
-NONE
-1
-random
-TEMPORARY BRIDGE
