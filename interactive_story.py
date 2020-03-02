@@ -74,17 +74,46 @@ class Scene:
 # @return a boolean indicating which outcome is appropriate
 def answer(text, qtype, outcomes):
     if qtype == 'yesno': #judges for yes/no questions
-        initial = text
-        while (text not in yes) and (text not in no):
-            text = input('Be clearer! Is that yes or no?')
-        if text in yes:
-            if text != initial:
-                yes.append(initial)
-            return outcomes[0]
+        THRESHOLD_PCT = 0.75
+        THRESHOLD_TOTAL = 10
+        unknown_words = []
+        uncountable_words = []
+        ambiguous_words = []
+        
+        while (word_dict.get(text) is None) or \
+            (sum(word_dict.get(text)) < THRESHOLD_TOTAL) or \
+            ((word_dict.get(text)[0]/sum(word_dict.get(text))) < THRESHOLD_PCT and \
+            (word_dict.get(text)[1]/sum(word_dict.get(text))) < THRESHOLD_PCT):
+            if word_dict.get(text) is None:
+                unknown_words.append(text)
+            elif sum(word_dict.get(text)) < THRESHOLD_TOTAL:
+                uncountable_words.append(text)
+            elif (word_dict.get(text)[0]/sum(word_dict.get(text))) < THRESHOLD_PCT and \
+                (word_dict.get(text)[1]/sum(word_dict.get(text))) < THRESHOLD_PCT:
+                ambiguous_words.append(text)
+
+            text = input("Is that yes or no?")
+
+        counts = word_dict.get(text)
+        pos = counts[0] / (counts[0] + counts[1])
+        neg = counts[1] / (counts[0] + counts[1])
+        if pos >= THRESHOLD_PCT:
+            index = 0
         else:
-            if text != initial:
-                no.append(initial)
-            return outcomes[1]
+            index = 1
+
+        if len(unknown_words) > 0:
+            for word in unknown_words:
+                word_dict[word] = [0,0]
+                (word_dict.get(word))[index] = 1
+        if len(uncountable_words) > 0:
+            for word in uncountable_words:
+                (word_dict.get(word))[index] = (word_dict.get(word))[index] + 1
+        if len(ambiguous_words) > 0:
+            for word in ambiguous_words:
+                (word_dict.get(word))[index] = (word_dict.get(word))[index] + 1
+
+        return outcomes[index]
     elif 'input' in qtype: #judges for character data
         if qtype[2] == 'yes':
             replace_inpt(qtype[1], text)
