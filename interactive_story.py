@@ -79,7 +79,7 @@ def answer(text, qtype, outcomes):
         unknown_words = []
         uncountable_words = []
         ambiguous_words = []
-        
+
         while (word_dict.get(text) is None) or \
             (sum(word_dict.get(text)) < THRESHOLD_TOTAL) or \
             ((word_dict.get(text)[0]/sum(word_dict.get(text))) < THRESHOLD_PCT and \
@@ -96,7 +96,6 @@ def answer(text, qtype, outcomes):
 
         counts = word_dict.get(text)
         pos = counts[0] / (counts[0] + counts[1])
-        neg = counts[1] / (counts[0] + counts[1])
         if pos >= THRESHOLD_PCT:
             index = 0
         else:
@@ -161,7 +160,7 @@ def main():
 
 # Reads in yes/no data from file.
 import json
-with open("json_test.json", "r") as infile:
+with open("yesno_data.json", "r") as infile:
     word_dict = json.load(infile)
 infile.close()
 
@@ -187,6 +186,6 @@ infile.close()
 main()
     
 # Writes new yes/no data to file.
-with open("json_test.json", "w") as outfile:
+with open("yesno_data.json", "w") as outfile:
     json.dump(word_dict, outfile, indent=4)
 outfile.close()
