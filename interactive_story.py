@@ -130,11 +130,10 @@ def main():
 
 
 
-# Reads in yes/no data lists from file.
-infile = open('answer_lists.txt', 'r', encoding='utf-8')
-answer_lists = infile.readlines()
-yes = answer_lists[0].strip().split(',')
-no = answer_lists[1].strip().split(',')
+# Reads in yes/no data from file.
+import json
+with open("json_test.json", "r") as infile:
+    word_dict = json.load(infile)
 infile.close()
 
 # Reads in and processes scenes from file.
@@ -159,17 +158,6 @@ infile.close()
 main()
     
 # Writes new yes/no data to file.
-yes_list = ''
-no_list = ''
-for i in range(len(yes)):
-    if i > 0:
-        yes[i] = ',' + yes[i]
-    yes_list = yes_list + yes[i]
-for i in range(len(no)):
-    if i > 0:
-        no[i] = ',' + no[i]
-    no_list = no_list + no[i]
-
-outfile = open('answer_lists.txt', 'w', encoding='utf=8')
-outfile.write(yes_list + '\n' + no_list)
+with open("json_test.json", "w") as outfile:
+    json.dump(word_dict, outfile, indent=4)
 outfile.close()
