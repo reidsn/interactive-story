@@ -309,11 +309,12 @@ ARTHURBEDEVERE
 
 ##TEMPORARYBRIDGE
 NONE
-This part of the story will be available soon!
+You meet up with the rest of the knights, who have new knowledge that the Holy Grail lies in the Castle of Aaaaaaggggghhh, beyond the Gorge of Eternal Peril.
 
-Do you want to play again?
-yesno
-INTRO:END
+You travel on towards the Gorge.
+1
+random
+BRIDGEINTRO
 
 ##GALAHAD
 NONE
