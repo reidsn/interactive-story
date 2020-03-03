@@ -304,6 +304,125 @@ You and Arthur ride around the Black Knight and continue your travels.
 random
 ARTHURBEDEVERE
 
+##GALAHAD
+NAME
+As you travel along with Galahad, a mighty storm blows in. Fighting through the harsh winds and freezing rain, you spot a castle up ahead. At the top of the tallest tower shines a bright golden grail.
+
+(Galahad) Look, Sir NAME! It is the Holy Grail!
+
+Do you approach?
+yesno
+CASTLEANTHRAX:PREGALAHADLANCELOT
+
+##CASTLEANTHRAX
+NONE
+Galahad approaches the castle and bangs on the door.
+(Galahad) Open the door! In the name of King Arthur, open the door!
+
+The door creaks open slowly, revealing a beautiful woman in a white gown.
+(Woman) Welcome, dear Knights, to the Castle Anthrax. Please, come in.
+
+Do you enter?
+yesno
+ANTHRAXENTRANCE:PREGALAHADLANCELOT
+
+##ANTHRAXENTRANCE
+NAME
+You and Galahad step into the warmly lit interior. The woman smiles.
+(Galahad) Gentle lady, are you the keeper of the Holy Grail?
+(Woman) The what?
+(NAME) The Holy Grail.
+(Woman) But you have been travelling! You must get dry and rest.
+
+Several more young women dressed in white appear bearing warm towels.
+(Woman) One moment, we will prepare a hot meal for you. Won't you stay awhile?
+yesno
+ANTHRAXNAMES:PREGALAHADLANCELOT
+
+##ANTHRAXNAMES
+NAME
+(Galahad) Good lady, where is the Grail?
+(Woman) Ah but we are not yet acquainted! I am Zoot. And you are?
+(Galahad) I am Sir Galahad the Pure.
+(NAME) And I am Sir NAME the Not-Appearing-In-That-Film.
+(Zoot) Wonderful! Now won't you come rest?
+
+The other women move forward to take your wet cloaks.
+Do you give them up and stay?
+yesno
+ANTHRAXBANQUET:PREGALAHADLANCELOT
+
+##ANTHRAXBANQUET
+NAME
+Zoot and the women take the cloaks and leave, while more beautiful women lead you both into a banquet room.
+(Galahad) But where is the Grail? Sir NAME, we must find it!
+
+Zoot enters from the other end of the chamber.
+Do you question her?
+yesno
+ANTHRAXGRAIL:LANCELOTRESCUE
+
+##ANTHRAXGRAIL
+NAME
+(Galahad) Zoot!
+(Zoot?) Oh no, I am not Zoot! I am Zoot's identical twin sister, Dingo.
+(NAME) Oh, um, well hello?
+(Dingo) Hello, sir Knights. What are you doing here?
+(Galahad) We have seen the Grail, here in this castle!
+(Dingo) The Grail? No, that cannot be... Oh no! Bad, bad Zoot! Wicked, naughty Zoot!
+(NAME) What?
+(Dingo) Oh, that Zoot! She often sets alight our beacon, which I have just recalled is Grail-shaped.
+(Galahad) So the Grail is not here?
+(Dingo) I am sorry, sir Knights. But won't you unburden yourselves and stay with us? Eat good warm food, and rest in nice soft beds, and maybe stay forever to protect these poor souls in this cold defenceless castle?
+Will you stay?
+yesno
+LANCELOTRESCUE:PREGALAHADLANCELOT
+
+##LANCELOTRESCUE
+NAME
+(Galahad) I guess we can stay awhile.
+
+Suddenly, Sir Lancelot bursts into the room, wildly waving his sword.
+(Lancelot) Sir Galahad! Sir NAME!
+(Galahad) Oh hello.
+(Lancelot) I am here to save you! You are in great peril!
+(NAME) We are?
+(Dingo) No they're not.
+(Lancelot) Silence, temptress!
+(Galahad) She's got a point.
+(Lancelot) Quick, go, I'll cover you!
+(Galahad) From what?
+(NAME) Look we're fine!
+(Dingo) Yes, they're fine! Don't you want to stay too?
+(Lancelot) Stay back! You two, run!
+
+Do you run?
+yesno
+LANCELOTSAVE:ANTHRAXEND
+
+##LANCELOTSAVE
+NONE
+Lancelot shoves you both out of the castle, as you are pursued by a horde of beautiful women in white dresses.
+
+1
+random
+GALAHADLANCELOT
+
+##PREGALAHADLANCELOT
+NAME
+(NAME) Sir Galahad, I think we should go...
+(Galahad) Hmm, perhaps you are rights, Sir NAME. Ladies, I think it is time we bid you goodbye.
+(Women) Oh no! Won't you stay? We need you!
+(Galahad) Farewell!
+
+You leave the castle only to find Sir Lancelot charging towards the front gates, wildly swinging his sword.
+(Lancelot) Sir Galahad! Sir NAME! You are in great peril, I must... oh, you've left on your own.
+(Galahad) Oh hello.
+
+1
+random
+GALAHADLANCELOT
+
 
 
 
@@ -312,15 +431,10 @@ NONE
 You meet up with the rest of the knights, who have new knowledge that the Holy Grail lies in the Castle of Aaaaaaggggghhh, beyond the Gorge of Eternal Peril.
 
 You travel on towards the Gorge.
+
 1
 random
 BRIDGEINTRO
-
-##GALAHAD
-NONE
-1
-random
-TEMPORARYBRIDGE
 
 ##LANCELOT
 NONE
@@ -346,7 +460,11 @@ NONE
 random
 TEMPORARYBRIDGE
 
-
+##GALAHADLANCELOT
+NONE
+1
+random
+TEMPORARYBRIDGE
 
 
 ##BRIDGEINTRO
@@ -440,6 +558,15 @@ As the French wheel the rabbit into the castle, you realize you are alone in the
 Suddenly, you are flying as the French catapult the rabbit over the castle walls.
 
 You have been catapulted into your fellow knights.
+
+Do you want to play again?
+yesno
+INTRO:END
+
+##ANTHRAXEND
+NONE
+Lancelot is forced out of the castle by a horde of beautiful women.
+You and Galahad stay behind... forever...
 
 Do you want to play again?
 yesno
