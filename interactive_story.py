@@ -51,6 +51,7 @@ class Scene:
     # @return the outcome scene to go to
     #
     def run_scene(self):
+        print('-' * 79)
         for line in self.script:
                 print(line)
         if self.qtype != 'random':
