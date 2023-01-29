@@ -1,0 +1,393 @@
+{
+    "intro": {
+        "human_readable": "Introduction",
+        "scene": "Welcome to the Quest for the Holy Grail.\n\nA man in royal robes and a crown approaches you, flanked by several knights.\n(Royal Man) What is your name, peasant?",
+        "qtype": "input",
+        "input": "name",
+        "next": "witch"
+    },
+    "witch": {
+        "human_readable": "Are You A Witch?",
+        "scene": "(Royal Man) Are you a witch, {name}?",
+        "qtype": "yes_no",
+        "yes": "witch_end",
+        "no": "join"
+    },
+    "join": {
+        "human_readable": "Join King Arthur",
+        "scene": "(Royal Man) Oh, good! You're a knight then!\nGreetings, brave knight! I am Arthur, King of the Britons.\nI am gathering knights to join me on my quest for the Holy Grail.\nWill you join me?",
+        "qtype": "yes_no",
+        "yes": "horse",
+        "no": "farm_end"
+    },
+    "horse": {
+        "human_readable": "Do You Have A Horse?",
+        "scene": "(Arthur) Do you have a horse, Sir {name}?",
+        "qtype": "yes_no",
+        "yes": "yes_horse",
+        "no": "no_horse"
+    },
+    "yes_horse": {
+        "scene": "(Arthur) Oh. Well. You won't need it. Here's some coconuts.",
+        "qtype": "none",
+        "next": "shields",
+        "add_to_bag": "coconut halves"
+    },
+    "no_horse": {
+        "scene": "(Arthur) No matter. Here are some coconuts.",
+        "qtype": "none",
+        "next": "shields",
+        "add_to_bag": "coconut halves"
+    },
+    "shields": {
+        "human_readable": "Choose Your Shield",
+        "scene": "I have several shields here. Which color do you want?",
+        "qtype": "input",
+        "input": "shield_color",
+        "next": "french_intro",
+        "add_to_bag": "shield"
+    },
+    "french_intro": {
+        "human_readable": "Distant French Castle",
+        "scene": "As you journey on with King Arthur and his knights, you spot a castle in the distance.\nDo you approach it?",
+        "qtype": "yes_no",
+        "yes": "french_castle",
+        "no": "split_up"
+    },
+    "french_castle": {
+        "human_readable": "Approach the Castle",
+        "scene": "A lone guard stands atop the wall.\n(Arthur) Hello! I am King Arthur of Camelot, and these are the Knights of the Round Table. Whose castle is this?\n(Guard) This is the castle of my master, Guy de Loimbard.\n(Arthur) Go and ask your master if he will join us in our quest for the Holy Grail.\n(Guard) Well, I'll ask him, but I don't think he'll be very keen. Uh, he's already got one, you see.\nQuestion the guard further?",
+        "qtype": "yes_no",
+        "yes": "french_guard",
+        "no": "nice_french_bye"
+    },
+    "french_guard": {
+        "human_readable": "Question the Guard",
+        "scene": "({name}) Are you sure he's got one? Can we come up and take a look?\n(Guard) Of course not! You are English types!\n(Arthur) Well, what are you, then?\n(Guard) I'm French, you silly king!\n(Galahad) What are you doing in England?\n(French Guard) Mind your own business!\n(Arthur) What do you think, Sir {name}? Shall we attack and take their Grail?",
+        "qtype": "yes_no",
+        "yes": "french_taunting",
+        "no": "mean_french_bye"
+    },
+    "french_taunting": {
+        "human_readable": "You've Been Taunted!",
+        "scene": "(Arthur) If you will not show us the Grail, we shall take your castle by force!\n(French Guard) You don't frighten us, English pig-dogs! Go and boil your bottom, sons of a silly person.\nI blow my nose at you, so-called Arthur King, you and all your silly English k-nnnnniggets.\n(Galahad) What a strange person.\n(Arthur) Now look here, my good man-\n(French Guard) I don't wanna talk to you no more, you empty headed animal food trough wiper!\nI fart in your general direction! Your mother was a hamster and your father smelt of elderberries!\n(Arthur) This is your last chance. I've been more than reasonable.\n(French Guard) Fetchez la vache.\nDo you stay here?",
+        "qtype": "yes_no",
+        "yes": "cow",
+        "no": "mean_french_bye"
+    },
+    "cow": {
+        "human_readable": "Flying Cow",
+        "scene": "(Arthur) Right! Charge!\n(Knights) Charge!\nSuddenly a cow is lanched over the wall and narrowly misses you.\n(French Guard) Take this! And this!\nSeveral more farm animals fly over the wall, scattering the knights.\n(Arthur and the Knights) Run away!\nDo you run away?",
+        "qtype": "yes_no",
+        "yes": "mean_french_bye",
+        "no": "squashed_end"
+    },
+    "nice_french_bye": {
+        "scene": "(Arthur) Well, that checks out. Goodbye, sir.\n(Guard) Goodbye!",
+        "qtype": "none",
+        "next": "split_up"
+    },
+    "mean_french_bye": {
+        "scene": "(French Guard) Hahaha! Yes, run away, or I shall taunt you a second time!\n(Lancelot) Fiends! I'll tear them apart!\n(Arthur) No no no! But this cannot stand. Sir {name}, shall we fight back?",
+        "qtype": "yes_no",
+        "yes": "trojan_rabbit",
+        "no": "split_up"
+    },
+    "trojan_rabbit": {
+        "human_readable": "Trojan Rabbit",
+        "scene": "(Bedevere) Sir! I have a plan.\nUnder Bedevere's instructions, you all help to construct a large hollow wooden rabbit and push it up to the gate.\nDo you get in the rabbit?",
+        "qtype": "yes_no",
+        "yes": "french_end",
+        "no": "trojan_fail"
+    },
+    "trojan_fail": {
+        "human_readable": "Trojan Rabbit Fail",
+        "scene": "You all hide as the French bring the wooden rabbit into the castle.\n(Arthur) Now what?\n(Bedevere) Now, Lancelot, Galahad, {name} and I wait until nightfall, and then leap out of the rabbit, taking the French by suprise!\n(Arthur) Who leaps out?\n(Bedevere) Uh, Lancelot, Galahad, {name} and I leap out, oh... Well if we built this large wooden badger...\nSuddenly, you hear the sound of the catapults again, and the wooden rabbit comes flying over the wall towards you.\n(Arthur and the Knights) Run away! Run away!\nDo you run away?",
+        "qtype": "yes_no",
+        "yes": "split_up",
+        "no": "squashed_end"
+    },
+    "split_up": {
+        "human_readable": "Split the Party",
+        "scene": "(Arthur) Well, at this point in our journey, I think we should split up and go out separately to find more knights and seek the Holy Grail.\nSir {name}, who do you want to travel with?",
+        "qtype": "choice",
+        "choices": ["Arthur", "Galahad", "Lancelot", "Robin", "Bedevere"]
+    },
+    "arthur": {
+        "human_readable": "Arthur Introduction",
+        "scene": "You and Arthur travel for many miles through a thick forest before you begin to hear clanging noises from ahead.\nDo you approach?",
+        "qtype": "yes_no",
+        "yes": "black_knight_intro",
+        "no": "arthur_bedevere"
+    },
+    "black_knight_intro": {
+        "human_readable": "Black Knight Introduction",
+        "scene": "You come to a clearing in the trees cut through with a stream. Over the stream is a bridge on which two knights in full armor are fighting.\nAs you watch, the knight in black armor stabs the knight in green armor through the head. The Green Knight falls.\nArthur approaches the Black Knight, who now stands at attention on the middle of the bridge.\n(Arthur) You fight with the strength of many men, Sir Knight. I am Arthur, King of the Britons.\nThe Black Knight does not respond.\n(Arthur) I seek the finest and the bravest knights in the land to join me in my court at Camelot. You have proved yourself worthy. Will you join me?\nThe Black Knight stares back impassively.\n(Arthur) You make me sad. Shall we continue, Sir {name}?",
+        "qtype": "yes_no",
+        "yes": "black_knight_fight",
+        "no": "arthur_bedevere"
+    },
+    "black_knight_fight": {
+        "human_readable": "Fight the Black Knight!",
+        "scene": "(Black Knight) None shall pass.\n(Arthur) What?\n(Black Knight) None shall pass.\n(Arthur) I have no quarrel with you, good Sir Knight, but I must cross this bridge.\n(Black Knight) Then you shall die.\n(Arthur) So be it. Sir {name}, do you wish to take this fight?",
+        "qtype": "yes_no",
+        "yes": "armor_leg",
+        "no": "arthur_fight"
+    },
+    "armor_leg": {
+        "human_readable": "The Fight Begins!",
+        "scene": "You charge forward and the fight begins. You spot an opening in the Black Knight's defense.\nDo you aim for an arm or a leg?",
+        "qtype": "choice",
+        "choices": ["arm", "leg"]
+    },
+    "arm": {
+        "human_readable": "Your Arm's Off!",
+        "scene": "You swing and chop off the Black Knight's left arm.\n({name}) Now stand aside, worthy adversary.\n(Black Knight) 'Tis but a scratch.\n({name}) A scratch? Your arm's off!\n(Black Knight) No, it isn't.\n({name}) Well, what's that, then?\n(Black Knight) I've had worse. Come on, you pansy!\n\nThe fight resumes. You swing and chop off the Black Knight's other arm.\n({name}) Victory is mine!\n\nThe Black Knight runs forward and kicks you.\n(Black Knight) Have at you!\n({name}) You are brave, Sir Knight, but the fight is mine.\n(Black Knight) Oh, had enough, eh?\n({name}) Look, you stupid bastard, you've got no arms left!\n(Black Knight) Just a flesh wound.\nHe kicks you again.\n\nDo you continue fighting?",
+        "qtype": "yes_no",
+        "yes": "leg_2",
+        "no": "black_knight_outro"
+    },
+    "leg_2": {
+        "human_readable": "You've Got No Legs!",
+        "scene": "({name}) Look, I'll have your leg.\nYou cut off the Black Knight's right leg.\n\n(Black Knight) Right. I'll do you for that!\n({name}) You'll what?\n(Black Knight) Come here!\n({name}) What are you going to do, bleed on me?\n(Black Knight) I'm invincible!\n({name}) You're a looney.\n(Black Knight) The Black Knight always triumphs! Have at you! Come on, then!\n\nYou cut off the Black Knight's other leg.\n(Black Knight) Oh? All right, we'll call it a draw.\n(Arthur) Come on, Sir {name}. We'll be on our way.",
+        "qtype": "none",
+        "next": "black_knight_outro"
+    },
+    "leg": {
+        "human_readable": "Your Leg's Off!",
+        "scene": "You swing and chop off the Black Knight's left leg.\n({name}) Now stand aside, worthy adversary.\n(Black Knight) 'Tis but a scratch.\n({name}) A scratch? Your leg's off!\n(Black Knight) No, it isn't.\n({name}) Well, what's that, then?\n(Black Knight) I've had worse. Come on, you pansy!\n\nThe fight resumes. You swing and chop off the Black Knight's other leg.\n({name}) Victory is mine!\n\nThe Black Knight flails his arms and whacks you.\n(Black Knight) Have at you!\n({name}) You are brave, Sir Knight, but the fight is mine.\n(Black Knight) Oh, had enough, eh?\n({name}) Look, you stupid bastard, you've got no legs left!\n(Black Knight) Just a flesh wound.\nHe whacks you again.\n\nDo you continue fighting?",
+        "qtype": "yes_no",
+        "yes": "arm_2",
+        "no": "black_knight_outro"
+    },
+    "arm_2": {
+        "human_readable": "You've Got No Arms!",
+        "scene": "({name}) Look, I'll have your arm.\nYou cut off the Black Knight's right arm.\n\n(Black Knight) Right. I'll do you for that!\n({name}) You'll what?\n(Black Knight) Come here!\n({name}) What are you going to do, bleed on me?\n(Black Knight) I'm invincible!\n({name}) You're a looney.\n(Black Knight) The Black Knight always triumphs! Have at you! Come on, then!\n\nYou cut off the Black Knight's other arm.\n(Black Knight) Oh? All right, we'll call it a draw.\n(Arthur) Come on, Sir {name}. We'll be on our way.",
+        "qtype": "none",
+        "next": "black_knight_outro"
+    },
+    "arthur_fight": {
+        "human_readable": "Arthur Fights the Black Knight!",
+        "scene": "King Arthur attacks and quickly chops off all of the Black Knight's limbs.\n(Black Knight) Right. I'll do you for that!\n(Arthur) You'll what?\n(Black Knight) Come here!\n(Arthur) What are you going to do, bleed on me?\n(Black Knight) I'm invincible!\n(Arthur) You're a looney. Come on, Sir {name}.",
+        "qtype": "none",
+        "next": "black_knight_outro"
+    },
+    "black_knight_outro": {
+        "scene": "(Black Knight) Oh. Oh, I see. Running away, eh? You yellow bastards! Come back here and take what's coming to you. I'll bite your legs off!\n\nYou and Arthur ride around the Black Knight and continue your travels.",
+        "qtype": "none",
+        "next": "arthur_bedevere"
+    },
+    "galahad": {
+        "human_readable": "Galahad Introduction",
+        "scene": "As you travel along with Galahad, a mighty storm blows in. Fighting through the harsh winds and freezing rain, you spot a castle up ahead. At the top of the tallest tower shines a bright golden grail.\n\n(Galahad) Look, Sir {name}! It is the Holy Grail!\n\nDo you approach?",
+        "qtype": "yes_no",
+        "yes": "castle_anthrax",
+        "no": "pre_galahad_lancelot"
+    },
+    "castle_anthrax": {
+        "human_readable": "Castle Anthrax Introduction",
+        "scene": "Galahad approaches the castle and bangs on the door.\n(Galahad) Open the door! In the name of King Arthur, open the door!\n\nThe door creaks open slowly, revealing a beautiful woman in a white gown.\n(Woman) Welcome, dear Knights, to the Castle Anthrax. Please, come in.\n\nDo you enter?",
+        "qtype": "yes_no",
+        "yes": "anthrax_entrance",
+        "no": "pre_galahad_lancelot"
+    },
+    "anthrax_entrance": {
+        "human_readable": "Enter Castle Anthrax",
+        "scene": "You and Galahad step into the warmly lit interior. The woman smiles.\n(Galahad) Gentle lady, are you the keeper of the Holy Grail?\n(Woman) The what?\n({name}) The Holy Grail.\n(Woman) But you have been travelling! You must get dry and rest.\n\nSeveral more young women dressed in white appear bearing warm towels.\n(Woman) One moment, we will prepare a hot meal for you. Won't you stay awhile?",
+        "qtype": "yes_no",
+        "yes": "anthrax_names",
+        "no": "pre_galahad_lancelot"
+    },
+    "anthrax_names": {
+        "human_readable": "Meet Zoot",
+        "scene": "(Galahad) Good lady, where is the Grail?\n(Woman) Ah but we are not yet acquainted! I am Zoot. And you are?\n(Galahad) I am Sir Galahad the Pure.\n({name}) And I am Sir {name} the Not-Appearing-In-That-Film.\n(Zoot) Wonderful! Now won't you come rest?\n\nThe other women move forward to take your wet cloaks.\nDo you give them up and stay?",
+        "qtype": "yes_no",
+        "yes": "anthrax_banquet",
+        "no": "pre_galahad_lancelot"
+    },
+    "anthrax_banquet": {
+        "human_readable": "Banquet at Castle Anthrax",
+        "scene": "Zoot and the women take the cloaks and leave, while more beautiful women lead you both into a banquet room.\n(Galahad) But where is the Grail? Sir {name}, we must find it!\n\nZoot enters from the other end of the chamber.\nDo you question her?",
+        "qtype": "yes_no",
+        "yes": "anthrax_grail",
+        "no": "lancelot_rescue"
+    },
+    "anthrax_grail": {
+        "human_readable": "The Anthrax Grail",
+        "scene": "(Galahad) Zoot!\n(Zoot?) Oh no, I am not Zoot! I am Zoot's identical twin sister, Dingo.\n({name}) Oh, um, well hello?\n(Dingo) Hello, sir Knights. What are you doing here?\n(Galahad) We have seen the Grail, here in this castle!\n(Dingo) The Grail? No, that cannot be... Oh no! Bad, bad Zoot! Wicked, naughty Zoot!\n({name}) What?\n(Dingo) Oh, that Zoot! She often sets alight our beacon, which I have just recalled is Grail-shaped.\n(Galahad) So the Grail is not here?\n(Dingo) I am sorry, sir Knights. But won't you unburden yourselves and stay with us? Eat good warm food, and rest in nice soft beds, and maybe stay forever to protect these poor souls in this cold defenceless castle?\nWill you stay?",
+        "qtype": "yes_no",
+        "yes": "lancelot_rescue",
+        "no": "pre_galahad_lancelot"
+    },
+    "lancelot_rescue": {
+        "human_readable": "Lancelot to the Rescue!",
+        "scene": "(Galahad) I guess we can stay awhile.\n\nSuddenly, Sir Lancelot bursts into the room, wildly waving his sword.\n(Lancelot) Sir Galahad! Sir {name}!\n(Galahad) Oh hello.\n(Lancelot) I am here to save you! You are in great peril!\n({name}) We are?\n(Dingo) No they're not.\n(Lancelot) Silence, temptress!\n(Galahad) She's got a point.\n(Lancelot) Quick, go, I'll cover you!\n(Galahad) From what?\n({name}) Look we're fine!\n(Dingo) Yes, they're fine! Don't you want to stay too?\n(Lancelot) Stay back! You two, run!\n\nDo you run?",
+        "qtype": "yes_no",
+        "yes": "lancelot_save",
+        "no": "anthrax_end"
+    },
+    "lancelot_save": {
+        "scene": "Lancelot shoves you both out of the castle, as you are pursued by a horde of beautiful women in white dresses.",
+        "qtype": "none",
+        "next": "galahad_lancelot"
+    },
+    "pre_galahad_lancelot": {
+        "human_readable": "Escape from Castle Anthrax",
+        "scene": "({name}) Sir Galahad, I think we should go...\n(Galahad) Hmm, perhaps you are right, Sir {name}. Ladies, I think it is time we bid you goodbye.\n(Women) Oh no! Won't you stay? We need you!\n(Galahad) Farewell!\n\nYou leave the castle only to find Sir Lancelot charging towards the front gates, wildly swinging his sword.\n(Lancelot) Sir Galahad! Sir {name}! You are in great peril, I must... oh, you've left on your own.\n(Galahad) Oh hello.",
+        "qtype": "none",
+        "next": "galahad_lancelot"
+    },
+    "lancelot": {
+        "scene": "Lancelot Scene",
+        "qtype": "none",
+        "next": "galahad_lancelot"
+    },
+    "robin": {
+        "scene": "Robin Scene",
+        "qtype": "none",
+        "next": "temporary_bridge"
+    },
+    "bedevere": {
+        "scene": "Bedevere Scene",
+        "qtype": "none",
+        "next": "arthur_bedevere"
+    },
+    "arthur_bedevere": {
+        "scene": "Arthur/Bedevere Scene",
+        "qtype": "none",
+        "next": "temporary_bridge"
+    },
+    "galahad_lancelot": {
+        "scene": "Galahad/Lancelot Scene",
+        "qtype": "none",
+        "next": "temporary_bridge"
+    },
+    "temporary_bridge": {
+        "human_readable": "Temporary Bridge",
+        "scene": "You meet up with the rest of the knights, who have new knowledge that the Holy Grail lies in the Castle of Aaaaaaggggghhh, beyond the Gorge of Eternal Peril.\n\nYou travel on towards the Gorge.",
+        "qtype": "none",
+        "next": "bridge_intro"
+    },
+    "bridge_intro": {
+        "human_readable": "Bridge of Death Introduction",
+        "scene": "The Gorge of Eternal Peril\nft. the old man from scene 24\n\n(Arthur) Behold the Bridge of Death, guarded by a terrifying keeper! To cross you must answer five questions-\n(Galahad) Three questions, sir.\n(Arthur) Three questions to pass safely. If you do not answer the five questions-\n(Galahad) Three questions, sir.\n(Arthur) Three questions correctly, you will be thrown into the Gorge of Eternal Peril. Are you ready?",
+        "qtype": "yes_no",
+        "yes": "question_1",
+        "no": "robin_end"
+    },
+    "question_1": {
+        "human_readable": "The First Question",
+        "scene": "(Bridgekeeper) Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side they see.\n({name}) Ask me the questions, bridgekeeper. I'm not afraid.\n(Bridgekeeper) What is your name?",
+        "qtype": "knowledge_check",
+        "info": "name",
+        "correct": "question_2",
+        "wrong": "bad_end"
+    },
+    "question_2": {
+        "human_readable": "The Second Question",
+        "scene": "(Bridgekeeper) What is your quest?",
+        "qtype": "contains",
+        "keywords": ["holy grail"],
+        "contains": "question_3",
+        "not_contains": "bad_end"
+    },
+    "question_3": {
+        "human_readable": "The Third Question",
+        "scene": "",
+        "qtype": "random",
+        "options": ["question_3_1", "question_3_2", "question_3_3", "question_3_4"],
+        "weights": [3, 1, 1, 1]
+    },
+    "question_3_1": {
+        "scene": "(Bridgekeeper) What is your favorite color?",
+        "qtype": "knowledge_check",
+        "info": "shield_color",
+        "correct": "good_end",
+        "wrong": "bad_end"
+    },
+    "question_3_2": {
+        "scene": "(Bridgekeeper) What is the air speed velocity of an unladen swallow?",
+        "qtype": "contains",
+        "keywords": ["african or european"],
+        "contains": "dead_end",
+        "not_contains": "bad_end"
+    },
+    "question_3_3": {
+        "scene": "(Bridgekeeper) What is the capital of Assyria?",
+        "qtype": "contains",
+        "keywords": ["assur", "ashur"],
+        "contains": "good_end",
+        "not_contains": "bad_end"
+    },
+    "question_3_4": {
+        "scene": "(Bridgekeeper) How many questions do I ask?",
+        "qtype": "contains",
+        "keywords": ["3", "three"],
+        "contains": "good_end",
+        "not_contains": "bad_end"
+    },
+    "witch_end": {
+        "scene": "BURN THE WITCH!!!!!\nYou have been burned for being a witch.\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "farm_end": {
+        "scene": "(Arthur) Well that's a pity. Farewell, Sir {name}. Knights, to Camelot!\n\nYou live out the rest of your life as a farmer.\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "squashed_end": {
+        "scene": "You have been squashed to death.\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "french_end": {
+        "scene": "You hide inside the wooden rabbit to wait for nightfall.\nAs the French wheel the rabbit into the castle, you realize you are alone in there.\nSuddenly, you are flying as the French catapult the rabbit over the castle walls.\n\nYou have been catapulted into your fellow knights.\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "anthrax_end": {
+        "scene": "Lancelot is forced out of the castle by a horde of beautiful women.\nYou and Galahad stay behind... forever...\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "robin_end": {
+        "scene": "({name}) Nope, never mind.\nBrave Sir {name} ran away\nBravely ran away away\nWhen danger reared its ugly head\nThey bravely turned their tail and fled\nYes brave Sir {name} turned about\nAnd gallently they chickened out\nBravely taking to their feet\nThey beat a very brave retreat\nBravest of the brave Sir {name}!\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "bad_end": {
+        "scene": "AAAAUUUUUGH!!!!\n\nYou have been thrown into the Gorge of Eternal Peril.\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "good_end": {
+        "scene": "(Bridgekeeper) Right. Off you go.\n\nYou have safely crossed the Bridge of Death!\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "dead_end": {
+        "scene": "(Bridgekeeper) Huh? I-I don't know that- AAAAUUUUUGH!!!!\n\nThe Bridgekeeper has been thrown into the Gorge of Eternal Peril.\n\nYou have safely crossed the Bridge of Death!\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "error": {
+        "scene": "Sorry, somthing went wrong.\n\nDo you want to play again?",
+        "qtype": "yes_no",
+        "yes": "intro",
+        "no": "end"
+    },
+    "end": {
+        "scene": "No, I wouldn't want to either.\nAnd now for something completely different.\nA man with a tape recorder up his nose!",
+        "image": "images/tape_recorder.gif"
+    }
+}
